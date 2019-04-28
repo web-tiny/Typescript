@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-04-26 18:45:29
  */
 // 输入和输出的的类型都要考虑到，
-function sum (x: number, y: number): number {
+function sum2 (x: number, y: number): number {
   return x + y;
 }
 
@@ -41,7 +41,29 @@ function buildName (firstName: string, lastName?: string) {
 let tomcat = buildName('tom', 'cat');
 let tom2 = buildName('tom');
 
-// 默认参数
-function buildName2 (firstName: string, lastName: string = 'cat') {
+// 默认参数：此时就不受[可选参数必须接在必需参数后面]的限制了
+function buildName2 (firstName: string = 'jiao', lastName: string) {
   return firstName + ' ' + lastName;
+}
+
+// 剩余参数, rest参数只能是最后一个参数
+function push(arr, ...item) {
+  item.forEach( i => arr.push(i));
+}
+let a: number[];
+push(a, 1, 2, 3);
+console.log(a)
+
+/** 
+ * 函数重载:
+ * 重载允许一个函数接受不同数量或类型的参数，做出不同的处理
+*/
+function reverse (x: number): number;
+function reverse (x: string): string;
+function reverse (x: number | string): number | string {
+  if (typeof x === 'number') {
+    return Number(x.toString().split('').reverse().join(''));
+  } else if (typeof x === 'string') {
+    return x.split('').reverse().join('')
+  }
 }
