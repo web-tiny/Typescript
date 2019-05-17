@@ -3,7 +3,9 @@ function alertName() {
 }
 var num = undefined;
 var u;
+var u2;
 var number = u;
+var number2 = u2;
 console.log(number);
 var uu;
 var anyValue = 'seven';

@@ -4,7 +4,9 @@ function alertName(): void {
 
 let num: number = undefined;
 let u: undefined;
+let u2: null;
 let number: number = u
+let number2: number = u2
 console.log(number)
 
 let uu: void;
